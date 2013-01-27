@@ -1,0 +1,31 @@
+{
+  "name": "",
+  "glyphs": [
+    {
+      "search": [
+        "arrow",
+        "left"
+      ],
+      "code": 59229,
+      "from": 59229,
+      "uid": "d870630ff8f81e6de3958ecaeac532f2",
+      "css": "left-open",
+      "orig_css": "left-open",
+      "orig_code": 59229,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "arrow",
+        "right"
+      ],
+      "code": 59230,
+      "from": 59230,
+      "uid": "399ef63b1e23ab1b761dfbb5591fa4da",
+      "css": "right-open",
+      "orig_css": "right-open",
+      "orig_code": 59230,
+      "src": "fontawesome"
+    }
+  ]
+}

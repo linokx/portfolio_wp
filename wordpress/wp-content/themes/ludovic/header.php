@@ -31,7 +31,19 @@
 	<div id="bgheader">
 		<header>
 			<a href="<?php echo home_url( '/' ); ?>">
-		<img src="<?php echo home_url( '/wp-content/themes/ludovic/' ); ?>images/mini_logo.png" width="48px" height="42px"/><h1>Ludovic Bekaert<span>Web Designer &amp; Programmer</span></h1></a><h2>
-Aujourd'hui, aucune société n'existe si elle n'est pas présente sur le web. Site vitrine ou veritable e-commerce, je saurais répondre à vos attentes.</h2>
-		</header><?php wp_nav_menu('Menu'); ?>
+		<hgroup><img src="<?php echo home_url( '/wp-content/themes/ludovic/' ); ?>images/mini_logo.png" width="48px" height="42px"/><h1>Ludovic Bekaert <span>Web Designer &amp; Programmer</span></h1></a><h2>
+&ldquo;Aujourd'hui, aucune société n'existe si elle n'est pas présente sur le web. Site vitrine ou veritable e-commerce, je saurais répondre à vos attentes.&rdquo;</h2>
+		</hgroup></header><?php // wp_nav_menu('Menu'); ?>
+		<?php
+		$defaults = array(
+			'menu'            => 'Principal',
+			'container'       => 'nav',
+			'container_class' => 'principal',
+			'container_id'    => false,
+			'echo'            => true,
+			'items_wrap'      => '%3$s'
+		);
+
+		wp_nav_menu( $defaults );
+		?>
 	</div>

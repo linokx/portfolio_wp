@@ -65,7 +65,7 @@ License URI: http://www.opensource.org/licenses/gpl-3.0.html
 .icon-right-open:after { content: '\e75e'; } /* '' */
 /* Main global 'theme' and typographic styles  */
 html {
-	background: rgb(20,20,20) url('images/backgrounds/asfalt.png');
+	background: rgb(20,20,20) url('images/backgrounds/asfalt_clair.png');
 }
 body {
 	font-family:Candara, Verdana, sans-serif;
@@ -248,12 +248,13 @@ h1, h1 a:link, h1 a:visited,.widget-area h2, .widget-area h2 a:link,.widget-area
 
 /* =Menu
 -------------------------------------------------------------- */
-div.menu{
+nav{
 	background: rgba(0,0,0,.75);
 	background: -webkit-linear-gradient(top left, rgba(0, 0, 0, .25), rgba(0,0,0, .7), rgba(0,0,0,.25));
 	border-bottom: 1px #222 solid;
 	border-top: 1px #111 solid;
 	box-shadow: 0 0 6px 1px rgba(0,0,0,.9) inset;
+	text-align: center;
 }
 	div.menu ul{
 		margin: auto;
@@ -261,21 +262,19 @@ div.menu{
 		position: relative;
 		max-width: 860px;
 	}
-	div.menu li{
+	nav a{
 		display: inline-block;
+		max-width: 172px;
+		padding: 10px 0;
 		text-align: center;
 		text-shadow:1px 1px 1px rgba(0,0,0,.3), 0 0 10px rgba(255,255,255,.3);
-		width: 25%;
+		width: 20%;
 	}
-	div.menu li a{
-		display: block;
-		padding: 10px 0;
-	}
-	div.menu li:hover{
+	nav a:hover{
 		background: -webkit-radial-gradient(center bottom, rgba(255,255,255,.1) 0%, rgba(255,255,255,0) 60%);
 		-text-shadow:none;
 	}
-	li.current_page_item a{
+	nav a.active{
 		background: -webkit-gradient(linear, left bottom, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,.1)), color-stop(100%,rgba(255,255,255,0)));
 	}
 @media only screen and (max-width: 480px) {
@@ -304,6 +303,7 @@ div.menu{
 	#slider ul li{
 		display: inline-block;
 		max-width: 860px;
+		vertical-align: top;
 		width: 25%;
 	}
 		#slider ul li+li{
@@ -327,6 +327,7 @@ div.menu{
 			position: relative;
 		}
 		#slider .apercu img:first-child{
+			height: auto;
 			left: 0;
 			width: 65.4%;
 		}
@@ -421,6 +422,7 @@ div.menu{
 	width: 860px;
 }
 	#accueil h2{
+		margin-bottom: 0.75em;
 		margin-top: 0;
 	}
 	#accueil ul{
@@ -437,11 +439,22 @@ div.menu{
 		vertical-align: top;
 		width: 250px;
 	}
+	.cat img{
+		border:1px rgb(100,100,100) solid;
+		border-left: none;
+		border-right: none;
+		margin-left: -10px;
+	}
+	.cat p{
+		margin-top: 0.5em;
+	}
 	li.cat+li.cat{
 		margin-left: 20px;
 	}
 	#accueil h3{
+		color: rgb(121, 78, 0);
 		margin-top: 0;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
 	}
 
 @media only screen and (max-width: 880px) {
@@ -468,6 +481,14 @@ div.menu{
 	margin: auto;
 	padding: 20px;
 	width: 820px;
+}
+#blog>div{
+	position: relative;
+}
+#blog>div>span{
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 #nav-below{
 	position: relative;
@@ -554,7 +575,7 @@ div.menu{
 footer{
 	background: #2a2b2d url('images/backgrounds/asfalt_clair.png');;
 	border-top: 1px #888 solid;
-	box-shadow: 0 0 15px 2px #000;
+	box-shadow: 0 -5px 7px 0px rgba(0,0,0,.5);
 	padding: 10px 0;
 	text-shadow:0 0 5px rgba(0,0,0,.3);
 }

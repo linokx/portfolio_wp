@@ -2337,8 +2337,9 @@ function wp_parse_args( $args, $defaults = '' ) {
 	else
 		wp_parse_str( $args, $r );
 
-	if ( is_array( $defaults ) )
+	if ( is_array( $defaults ) ){
 		return array_merge( $defaults, $r );
+	}
 	return $r;
 }
 

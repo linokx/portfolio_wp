@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="content">
+<div id="content">
 <article id="blog">
 <?php query_posts('posts_per_page=10'); ?>
   <?php if (have_posts()) : ?>
@@ -15,5 +15,5 @@
 <?php endwhile; ?>
 <?php endif; ?>
 </article>
-</section>
+</div>
 <?php get_footer();?>

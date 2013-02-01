@@ -51,6 +51,7 @@ if(is_admin()) {
 	add_action('widgets_init', 'invinciweb_sidebars');
 	add_action('after_setup_theme','invinciweb_setup');
 	add_action('init','create_post_type');
+	add_theme_support( 'menus' );
 	//add_action( 'init', 'people_init' );
 	
 	
@@ -81,6 +82,17 @@ if(is_admin()) {
 					'taxonomies' => array('post_tag','category')
 				)
 			);
+			register_post_type('capacities',
+				array(
+					'labels' => array(
+						'name' => __('Aptitudes'),
+						'singular_name' => __('Aptitude')
+					),
+					'supports' => array('title','editor'),
+					'public' => true,
+					'has_archive' => true
+				)
+			);
 		}
 	}
 	if(!function_exists('invinciweb_sidebars')){
@@ -98,28 +110,12 @@ if(is_admin()) {
 			);
 		}
 	}
-	/*if(!function_exists('people_init')){
-		function people_init() {
-		// create a new taxonomy
-		register_taxonomy(
-			'people',
-			'post',
-			array(
-				'label' => __( 'People' ),
-				'rewrite' => array( 'slug' => 'person' ),
-				'capabilities' => array(
-					'assign_terms' => 'edit_guides',
-					'edit_terms' => 'publish_guides'
-					)
-				)
-			);
-		}
-	}*/
 	function new_excerpt_more($more) {
        global $post;
-	return '<div class="read_more"><a href="'. get_permalink($post->ID) . '">Lire la suite de '.get_the_title().'</a></div>';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
+		return '<div class="read_more"><a href="'. get_permalink($post->ID) . '">Lire la suite de '.get_the_title().'</a></div>';
+	}
+	add_filter('excerpt_more', 'new_excerpt_more');
+
 	if( !function_exists( 'theme_pagination' ) ) {
 	
 		function theme_pagination()

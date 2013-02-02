@@ -13,10 +13,23 @@
 	var positionDepart = function(){
 		iPosNow = iPosMin = 0;//(window.outerWidth-iWidth)/2;
 		//iPosMax = iPosMin - (1050*(iNumber-1));
-		iPosMax = iPosMin - (120*(iNumber-1));
+		iStep = Math.floor(107+(5*(iNumber)));
+		iPosMax = iPosMin - (iStep*(iNumber-1));
+		$slider.css({width:((iNumber+1)*105)-5+'%'});
+		$slider.find('li').css({width:Math.floor(100/(iNumber+1))+'%'});
 		//iStep = iWidth +202;
-		iStep = 121;
+		// 3 => 122
+		// 4 => 127
+		// 5 => 132
+
+		// 210% -> 47% -> 16%
+		// 315% -> 31% -> 8.5%
+		// 420% -> 23.5% -> 4.5%
+		// 525% -> 19% ->
+		iStep = Math.floor(107+(5*(iNumber)));
+		$next.hide();
 		$previous.hide();
+		afficheFleche();
    		//$slider.css({marginLeft:iPosMin});
 	}; //positionDepart
 

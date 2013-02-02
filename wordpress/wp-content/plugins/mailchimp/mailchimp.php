@@ -1301,10 +1301,10 @@ function mailchimpSF_signup_submit() {
 			if (!$retval) {
 				switch($api->errorCode) {
 					case '105' : 
-						$errs[] = __("Please try again later", 'mailchimp_i18n').'.'; 
+						$errs[] = __("S'il-vous-plaît, réessayé plus tard", 'mailchimp_i18n').'.'; 
 						break;
 					case '214' : 
-						$errs[] = __("That email address is already subscribed to the list", 'mailchimp_i18n').'.'; 
+						$errs[] = __("Cet emai est déjà inscrit à ce groupe", 'mailchimp_i18n').'.'; 
 						break;
 					case '250' : 
 						list($field, $rest) = explode(' ', $api->errorMessage, 2);					
@@ -1312,13 +1312,13 @@ function mailchimpSF_signup_submit() {
 						break;
 					case '254' : 
 						list($i1, $i2, $i3, $field, $rest) = explode(' ',$api->errorMessage,5);
-						$errs[] = sprintf(__("%s has invalid content.", 'mailchimp_i18n'), esc_html($mv_tag_keys[$field]['name']));
+						$errs[] = sprintf(__("%s est un contenu invalide.", 'mailchimp_i18n'), esc_html($mv_tag_keys[$field]['name']));
 						break;
 					case '270' : 
-						$errs[] = __("An invalid Interest Group was selected", 'mailchimp_i18n').'.';
+						$errs[] = __("Un groupe invalide a été sélectionné", 'mailchimp_i18n').'.';
 						break;
 					case '502' : 
-						$errs[] = __("That email address is invalid", 'mailchimp_i18n').'.';
+						$errs[] = __("Cet email est invalide", 'mailchimp_i18n').'.';
 						break;
 					default:
 						$errs[] = $api->errorCode.":".$api->errorMessage;
@@ -1338,7 +1338,7 @@ function mailchimpSF_signup_submit() {
 		$msg .= '</span>';
 	}
 	else {
-		$msg = "<strong class='mc_success_msg'>".esc_html(__("Success, you've been signed up! Please look for our confirmation email!", 'mailchimp_i18n'))."</strong>";
+		$msg = "<strong class='mc_success_msg'>".esc_html(__("Félicitation, vous êtes inscrit ! Vérifier votre email de confirmation !", 'mailchimp_i18n'))."</strong>";
 	}
 	
 	// Set our global message

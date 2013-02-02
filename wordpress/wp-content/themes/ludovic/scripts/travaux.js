@@ -57,6 +57,16 @@
 		}
 	}; //afficheFleche
 
+	var message = function(e){
+		e.preventDefault();
+		$('#feedback').html('Message en cours d\'envoi&hellip;').show();
+		$.post("http://lettrage-bekaert.eu/ludovic/wp-content/themes/ludovic/contact.php",$(this).serialize(),function(texte){
+            $('#feedback').html(texte);
+        });
+
+		return false;
+	}
+
    $(function(){
    		$slider = $('#slider ul');
    		$previous = $('#previous');
@@ -68,6 +78,7 @@
 
    		$previous.on('click',changePosition);
    		$next.on('click',changePosition);
+   		$('#formulaire form').on('submit',message);
    		/*$previous.on('click',function(){
    			$slider.animate({marginLeft:iPosNow-1050},800,function(){
    				console.log(iPosNow);

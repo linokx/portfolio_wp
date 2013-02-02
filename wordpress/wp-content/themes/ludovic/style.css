@@ -554,8 +554,24 @@ nav{
 			width: 100%;
 		}
 		#formulaire input[type=submit]{
-			padding: 10px;
+			background: rgb(243, 68, 0);
+			border: 1px rgb(230, 70, 0) solid;
+			border-radius: 3px;
+			background: -moz-linear-gradient(top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
+			background: -webkit-linear-gradient(top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
+			background: -ms-radial-gradient(center top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
+			background: -o-radial-gradient(center top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
+			box-shadow: 0 2px 2px rgb(83, 48, 0);
+			color:#FFF;
+			padding: 5px 10px;
+			text-shadow:-1px -1px 0 rgba(0,0,0,.3);
 		}
+		#formulaire input[type="submit"]:hover{
+			background: rgb(203, 108, 0);
+		}
+	#feedback{
+		display: none;
+	}
 
 @media only screen and (max-width: 880px) {
 	#contact{
@@ -619,9 +635,13 @@ footer{
 		background: -webkit-linear-gradient(top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
 		background: -ms-radial-gradient(center top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
 		background: -o-radial-gradient(center top, rgb(213, 184, 0) 0%, rgb(245, 68, 2) 100%);
+		box-shadow: 0 2px 2px rgb(83, 48, 0);
 		color:#FFF;
 		padding: 5px 10px;
 		text-shadow:-1px -1px 0 rgba(0,0,0,.3);
+	}
+	footer .mc_form_inside input[type="submit"]:hover{
+		background: rgb(203, 108, 0);
 	}
 	footer input[type="text"]{
 		box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3) inset;

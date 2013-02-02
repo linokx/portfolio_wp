@@ -1,4 +1,3 @@
-Traitement en cours...
 <?php
 	 if($_POST['message'] != null && $_POST['mail'] != null){
 		$to = 'ludovic.bekaert@student.hepl.be';
@@ -9,23 +8,14 @@ Traitement en cours...
 		'X-Mailer: PHP/' . phpversion();
 		 try{
 			mail($to,"Mail du portofolio", $message, $headers);
-			?>
-			<SCRIPT LANGUAGE="JavaScript">document.location.href="../../../contact"</SCRIPT>
-			Message envoyé avec succès. <a href="contact">Retour à la page contact</a>	
-			<?php
+			echo "Message envoyé avec succès.";
 		}
 		catch (Exception $e){
-			?>
-			<SCRIPT LANGUAGE="JavaScript">document.location.href="../../../contact"</SCRIPT>
-			Le message n'a pas pu être envoyé. <a href="contact">Retour à la page contact</a>	
-			<?php
+			echo "Le message n'a pas pu être envoyé.";
 		}
 	}
 	else
 	{
-	?>
-		<SCRIPT LANGUAGE="JavaScript">document.location.href="../../../contact"</SCRIPT>
-		Le message n'a pas pu être envoyé. <a href="contact">Retour à la page contact</a>
-		<?php
+		echo "Le message n'a pas pu être envoyé.";
 	}
  ?>

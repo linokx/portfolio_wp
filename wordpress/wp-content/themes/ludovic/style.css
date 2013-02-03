@@ -280,8 +280,10 @@ nav{
 		background: -webkit-gradient(linear, left bottom, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,.1)), color-stop(100%,rgba(255,255,255,0)));
 	}
 @media only screen and (max-width: 480px) {
-	div.menu li a{
-		padding:10px 2%;
+	nav a{
+		display: block;
+		max-width: none;
+		width: auto;
 	}
 }
 
@@ -476,7 +478,7 @@ nav{
 }
 /* =Blog
 -------------------------------------------------------------- */
-#blog, #article, #categorie {
+#blog, #article, #categorie, #propos,#search {
 	background: rgba(255,255,255,1);
 	box-shadow: 0px 0px 2px 1px rgba(0,0,0,.2);
 	color:#000;
@@ -506,7 +508,7 @@ nav{
 	position: absolute;
 }
 @media only screen and (max-width: 880px) {
-	#blog, #article, #categorie{
+	#blog, #article, #categorie,#propos, #search{
 		margin: auto 10px;
 		padding: 5px 10px;
 		width: auto;
@@ -515,7 +517,42 @@ nav{
 		display: none;
 	}
 }
-
+/* =Propos
+-------------------------------------------------------------- */
+#propos h2{
+	margin-bottom: 0.5em;
+}
+#propos div{
+	display: inline-block;
+	width: 25%;
+}
+#propos p{
+	display: inline-block;
+	width: 70%;
+}
+#propos .annee{
+	color: rgb(181, 138, 0);
+	font-size:22px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+#propos .mois{
+	font-size:16px;
+	margin-right: 20px;
+}
+@media only screen and (max-width: 600px){
+	#propos div{
+		margin-bottom: 0.5em;
+		width: auto;
+	}
+	#propos p{
+		border-bottom: 1px #AAA solid;
+		display: block;
+		padding-bottom: 2em;
+		margin-top: 0;
+		width: auto;
+	}
+}
 /* =Contact
 -------------------------------------------------------------- */
 #contact{
@@ -553,7 +590,7 @@ nav{
 			margin: 0.5em 0 1em;
 			width: 100%;
 		}
-		#formulaire input[type=submit]{
+		input[type=submit]{
 			background: rgb(243, 68, 0);
 			border: 1px rgb(230, 70, 0) solid;
 			border-radius: 3px;
@@ -588,6 +625,8 @@ nav{
 		width: auto;
 	}
 }
+
+
 /* =Footer
 -------------------------------------------------------------- */
 footer{

@@ -16,7 +16,7 @@
 	<div id="site-info">
 			<?php wp_nav_menu( array( 'menu_class' => 'footer-links', 'depth' => '1', 'theme_location' => 'footer', 'fallback_cb' => 'wp_page_menu'  ) ); ?>
 			<div class="coord">
-				<a href="wp-content/uploads/cv.pdf" id="cv" title="Cv de Ludovic Bekaert" type="application/pdf">Télécharger mon CV (pdf)</a>
+				<a href="<?php echo home_url( '/wp-content/' );?>uploads/cv.pdf" id="cv" title="Cv de Ludovic Bekaert" type="application/pdf">Télécharger mon CV (pdf)</a>
 				<p itemscope itemtype="http://schema.org/Person">
 					<span itemprop="name">Ludovic Bekaert</span><br/>
 					<span itemprop="email">Linokx@hotmail.com</span><br/>
